@@ -10,7 +10,9 @@ const emit = defineEmits(['select-list'])
   <div
     class="flex flex-col w-full h-fit bg-gradient-to-r from-[#FFA279] to-[#F3743D] text-secondary px-48 py-9"
   >
-    <nav class="flex flex-row justify-center items-center gap-16 text-nowrap">
+    <nav
+      class="flex ss:flex-wrap flex-row justify-center items-center ss:gap-5 gap-16 text-nowrap"
+    >
       <div class="flex justify-center items-center gap-2">
         <img
           alt="Logo Preview"
@@ -50,7 +52,7 @@ const emit = defineEmits(['select-list'])
       <div class="flex flex-col gap-2">
         <button
           class="text-white uppercase font-bold"
-          @click="emit('select-list', 'ownList')"
+          @click="emit('select-list', 'addOwnList')"
         >
           Own List
         </button>
