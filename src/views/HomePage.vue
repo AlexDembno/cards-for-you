@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-parsing-error -->
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import IHeader from '@/components/IHeader/IHeader.vue'
@@ -40,7 +41,6 @@ const handleUseWords = () => {
   resetIndex()
 }
 
-// Восстанавливаем состояние при загрузке страницы
 onMounted(() => {
   const savedList = localStorage.getItem('currentList')
   const savedIndex = localStorage.getItem('currentIndex')
@@ -49,7 +49,6 @@ onMounted(() => {
   if (savedIndex) currentIndex.value = parseInt(savedIndex, 10)
 })
 
-// Следим за изменениями currentList и currentIndex и сохраняем в localStorage
 watch([currentList, currentIndex], ([newList, newIndex]) => {
   localStorage.setItem('currentList', newList)
   localStorage.setItem('currentIndex', newIndex.toString())
@@ -59,14 +58,14 @@ watch([currentList, currentIndex], ([newList, newIndex]) => {
 <template>
   <IHeader @select-list="updateList" />
 
-  <main class="flex h-screen">
+  <main class="flex px-48 ss:py-24 md:py-48">
     <section class="flex justify-center items-center w-full">
       <IButton
         v-if="currentList !== 'addOwnList'"
         class="w-25 bg-gradient-to-r from-[#FFA279] to-[#F3743D] text-secondary mr-5 px-3 py-2 rounded"
         @click="decrement"
       >
-        PREVIOUS
+        <<
       </IButton>
 
       <IForm v-if="currentList === 'addOwnList'" @use-words="handleUseWords" />
@@ -90,7 +89,7 @@ watch([currentList, currentIndex], ([newList, newIndex]) => {
         class="w-25 bg-gradient-to-r from-[#FFA279] to-[#F3743D] text-secondary ml-5 px-3 py-2 rounded"
         @click="increment"
       >
-        NEXT
+        >>
       </IButton>
     </section>
   </main>

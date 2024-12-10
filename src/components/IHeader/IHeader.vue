@@ -16,8 +16,9 @@ const emit = defineEmits(['select-list'])
       <div class="flex justify-center items-center gap-2">
         <img
           alt="Logo Preview"
-          src="https://tailwind-generator.b-cdn.net/favicon.png"
+          src="../ICons/icon_new.png"
           width="59"
+          class="rounded-full"
         />
 
         <p class="text-white uppercase font-bold">Cards for you</p>

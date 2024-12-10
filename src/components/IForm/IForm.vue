@@ -63,6 +63,7 @@ const onUseWords = () => {
     <IButton
       type="button"
       @click="onUseWords"
+      :disabled="ownList.length === 0"
       class="cursor-pointer bg-gradient-to-r from-[#FFA279] to-[#F3743D] text-white p-2"
     >
       Use Words
