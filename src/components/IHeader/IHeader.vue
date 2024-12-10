@@ -1,8 +1,5 @@
 <script setup>
 import { defineEmits } from 'vue'
-// const isDesktop = window.innerWidth >= 1024
-// const isTablet = window.innerWidth < 1024
-// const isMobile = window.innerWidth < 768
 const emit = defineEmits(['select-list'])
 </script>
 
